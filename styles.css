@@ -1,0 +1,307 @@
+html {
+  overflow-y: scroll;
+}
+
+.idyll-action {
+  cursor: pointer;
+}
+
+.d3-component svg {
+  background: #ddd;
+  max-height: 300px;
+}
+
+@media all and (max-width: 1000px) {
+  .d3-component svg {
+    max-height: 200px;
+  }
+}
+
+.deck {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 90%;
+  margin: -7em auto 2em;
+}
+
+.card {
+  display: inline-flex;
+  background: white;
+  width: 40px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin: -0.75em -0.5em;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-2em) scale(1.5) !important;
+}
+
+/* https://codepen.io/OpenDec/pen/pdLpVL */
+.card::after {
+  display: block;
+  font-family: Marvel, "Trebuchet MS", Helvetica, sans-serif;
+  text-align: center;
+  white-space: pre;
+}
+
+.card[data-type^="h"],
+.card[data-type^="d"] {
+  color: #f21;
+  border-color: #f21;
+}
+.card[data-type^="c"],
+.card[data-type^="s"] {
+  color: #123;
+  border-color: #123;
+}
+
+.card[data-type$="A"]::after {
+  font-size: 2.5em;
+  line-height: 1.2em;
+}
+.card[data-type$="2"]::after,
+.card[data-type$="3"]::after,
+.card[data-type$="4"]::after,
+.card[data-type$="5"]::after,
+.card[data-type$="6"]::after,
+.card[data-type$="7"]::after {
+  font-size: 1em;
+  line-height: 0.5em;
+}
+.card[data-type$="8"]::after,
+.card[data-type$="9"]::after,
+.card[data-type$="0"]::after {
+  font-size: 1em;
+  line-height: 0.2em;
+}
+.card[data-type$="J"]::after,
+.card[data-type$="Q"]::after,
+.card[data-type$="K"]::after {
+  font-size: 1.75em;
+  line-height: 0.8em;
+}
+
+/* Hearts */
+
+.card[data-type="hA"]::after {
+  content: "\2665";
+}
+
+.card[data-type="h2"]::after {
+  content: "\2665\a\a\a\a\2665";
+}
+
+.card[data-type="h3"]::after {
+  content: "\2665\a\a\2665\a\a\2665";
+}
+
+.card[data-type="h4"]::after {
+  content: "\2665    \2665\a\a\a\a\2665    \2665";
+}
+
+.card[data-type="h5"]::after {
+  content: "\2665    \2665\a\a\2665\a\a\2665    \2665";
+}
+
+.card[data-type="h6"]::after {
+  content: "\2665    \2665\a\a\2665    \2665\a\a\2665    \2665";
+}
+
+.card[data-type="h7"]::after {
+  content: "\2665    \2665\a\2665\a\2665    \2665\a\a\2665    \2665";
+}
+
+.card[data-type="h8"]::after {
+  content: "\a\2665    \2665\a\a\a\a\2665    \2665\a\a\a\a\2665    \2665\a\a\a\a\2665    \2665";
+}
+
+.card[data-type="h9"]::after {
+  content: "\a\2665    \2665\a\a\2665\a\a\2665    \2665\a\a\a\a\2665    \2665\a\a\a\a\2665    \2665";
+}
+
+.card[data-type="h10"]::after {
+  content: "\a\2665    \2665\a\a\2665\a\a\2665    \2665\a\a\a\a\2665    \2665\a\a\2665\a\a\2665    \2665";
+}
+
+.card[data-type="hJ"]::after {
+  content: "J\a\2665";
+}
+
+.card[data-type="hQ"]::after {
+  content: "Q\a\2665";
+}
+
+.card[data-type="hK"]::after {
+  content: "K\a\2665";
+}
+
+/* Clubs */
+
+.card[data-type="cA"]::after {
+  content: "\2663";
+}
+
+.card[data-type="c2"]::after {
+  content: "\2663\a\a\a\a\2663";
+}
+
+.card[data-type="c3"]::after {
+  content: "\2663\a\a\2663\a\a\2663";
+}
+
+.card[data-type="c4"]::after {
+  content: "\2663    \2663\a\a\a\a\2663    \2663";
+}
+
+.card[data-type="c5"]::after {
+  content: "\2663    \2663\a\a\2663\a\a\2663    \2663";
+}
+
+.card[data-type="c6"]::after {
+  content: "\2663    \2663\a\a\2663    \2663\a\a\2663    \2663";
+}
+
+.card[data-type="c7"]::after {
+  content: "\2663    \2663\a\2663\a\2663    \2663\a\a\2663    \2663";
+}
+
+.card[data-type="c8"]::after {
+  content: "\a\2663    \2663\a\a\a\a\2663    \2663\a\a\a\a\2663    \2663\a\a\a\a\2663    \2663";
+}
+
+.card[data-type="c9"]::after {
+  content: "\a\2663    \2663\a\a\2663\a\a\2663    \2663\a\a\a\a\2663    \2663\a\a\a\a\2663    \2663";
+}
+
+.card[data-type="c10"]::after {
+  content: "\a\2663    \2663\a\a\2663\a\a\2663    \2663\a\a\a\a\2663    \2663\a\a\2663\a\a\2663    \2663";
+}
+
+.card[data-type="cJ"]::after {
+  content: "J\a\2663";
+}
+
+.card[data-type="cQ"]::after {
+  content: "Q\a\2663";
+}
+
+.card[data-type="cK"]::after {
+  content: "K\a\2663";
+}
+
+/* Diamonds */
+
+.card[data-type="dA"]::after {
+  content: "\2666";
+}
+
+.card[data-type="d2"]::after {
+  content: "\2666\a\a\a\a\2666";
+}
+
+.card[data-type="d3"]::after {
+  content: "\2666\a\a\2666\a\a\2666";
+}
+
+.card[data-type="d4"]::after {
+  content: "\2666    \2666\a\a\a\a\2666    \2666";
+}
+
+.card[data-type="d5"]::after {
+  content: "\2666    \2666\a\a\2666\a\a\2666    \2666";
+}
+
+.card[data-type="d6"]::after {
+  content: "\2666    \2666\a\a\2666    \2666\a\a\2666    \2666";
+}
+
+.card[data-type="d7"]::after {
+  content: "\2666    \2666\a\2666\a\2666    \2666\a\a\2666    \2666";
+}
+
+.card[data-type="d8"]::after {
+  content: "\a\2666    \2666\a\a\a\a\2666    \2666\a\a\a\a\2666    \2666\a\a\a\a\2666    \2666";
+}
+
+.card[data-type="d9"]::after {
+  content: "\a\2666    \2666\a\a\2666\a\a\2666    \2666\a\a\a\a\2666    \2666\a\a\a\a\2666    \2666";
+}
+
+.card[data-type="d10"]::after {
+  content: "\a\2666    \2666\a\a\2666\a\a\2666    \2666\a\a\a\a\2666    \2666\a\a\2666\a\a\2666    \2666";
+}
+
+.card[data-type="dJ"]::after {
+  content: "J\a\2666";
+}
+
+.card[data-type="dQ"]::after {
+  content: "Q\a\2666";
+}
+
+.card[data-type="dK"]::after {
+  content: "K\a\2666";
+}
+
+/* Spades */
+
+.card[data-type="sA"]::after {
+  content: "\2660";
+}
+
+.card[data-type="s2"]::after {
+  content: "\2660\a\a\a\a\2660";
+}
+
+.card[data-type="s3"]::after {
+  content: "\2660\a\a\2660\a\a\2660";
+}
+
+.card[data-type="s4"]::after {
+  content: "\2660    \2660\a\a\a\a\2660    \2660";
+}
+
+.card[data-type="s5"]::after {
+  content: "\2660    \2660\a\a\2660\a\a\2660    \2660";
+}
+
+.card[data-type="s6"]::after {
+  content: "\2660    \2660\a\a\2660    \2660\a\a\2660    \2660";
+}
+
+.card[data-type="s7"]::after {
+  content: "\2660    \2660\a\2660\a\2660    \2660\a\a\2660    \2660";
+}
+
+.card[data-type="s8"]::after {
+  content: "\a\2660    \2660\a\a\a\a\2660    \2660\a\a\a\a\2660    \2660\a\a\a\a\2660    \2660";
+}
+
+.card[data-type="s9"]::after {
+  content: "\a\2660    \2660\a\a\2660\a\a\2660    \2660\a\a\a\a\2660    \2660\a\a\a\a\2660    \2660";
+}
+
+.card[data-type="s10"]::after {
+  content: "\a\2660    \2660\a\a\2660\a\a\2660    \2660\a\a\a\a\2660    \2660\a\a\2660\a\a\2660    \2660";
+}
+
+.card[data-type="sJ"]::after {
+  content: "J\a\2660";
+}
+
+.card[data-type="sQ"]::after {
+  content: "Q\a\2660";
+}
+
+.card[data-type="sK"]::after {
+  content: "K\a\2660";
+}

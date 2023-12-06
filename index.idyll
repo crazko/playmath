@@ -1,0 +1,58 @@
+[meta title:"Playmath" description:"Short description of your project" /]
+
+[Header
+  fullWidth:true
+  title:"Playmath"
+  subtitle:"Hranie sa s kombináciami, náhodou a pravdepodobnosťou"
+  author:"Your Name Here"
+  authorLink:"https://romanvesely.com"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+[var name:"x" value:0 /]
+[derived name:"n" value:`x == 0 ? 0 : factorial(x)` /]
+
+[Deck value:x /]
+
+Poďme zistiť, koľko možností zoradenia kariet existuje pri tom ktorom počte kariet. Skúsme sa pozrieť najprv na výsledný počet pri [action onClick:`x=1`]jednej karte[/action], [action onClick:`x=2`]dvoch kartách[/action] a [action onClick:`x=3`]troch kartách[/action].
+
+// Len do 13 karat
+
+**Celkový počet** možných zoradení pri [display value:x format:"d" /] [inline][conditional if:`x==0 || x > 1`]kartách[/conditional][conditional if:`x==1`]karte[/conditional][/inline] je **[Display value:n format:"d" /]**.
+
+Pri troch kartách sa počet zoradení zväčšil nelineárne.
+
+Skús meniť počet kariet [range value:x min:0 max:13 /] a sleduj, čo sa stane s výsledkom.
+
+[conditional if:`true`][/conditional]
+
+  Pri čo i len trošku väčšom počte zamiešaných kariet začína byť výsledný počet možností ich zoradenia naozaj veľké číslo. [inline][conditional if:`x > 8`]Priam obrovské.[/conditional][/inline]
+
+// Pouzit tabulku https://idyll-lang.org/docs/component/table
+[conditional if:`x > 10`]
+
+Momentálne ich je ich toľko, že každý obyvateľ Poľska môže mať v ruke jedinečné rozloženie kariet. A ešte zvýši aj pre niekoľkých susedov.
+
+[/conditional]
+
+[conditional if:`x > 12`]
+Momentálne je ich viac ako bolo na svete ľudí v roku 2000.
+[/conditional]
+
+[conditional if:`x > 14`]
+Vieš toto číslo vysloviť?
+[/conditional]
+
+
+// [conditional if:`x == 13`]
+
+Počet možných zoradení je v tomto prípade vyjadrený **permutáciou** a vypočíta sa pomocou faktoriálu:
+
+[equation display:`true`]
+  n! = n(n-1)!
+[/equation]
+
+Čo sa však stane, ak budeme počítať s väčším množstvom kariet, s celým balíkom? [range value:x min:0 max:52 /]
+// [/conditional]
